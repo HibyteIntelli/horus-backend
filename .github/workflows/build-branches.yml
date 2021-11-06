@@ -32,7 +32,7 @@ jobs:
           SETTINGS_XML: ${{ secrets.SETTINGS_XML }}
 
       - name: Maven Package
-        run: mvn -s settings.xml clean package -U
+        run: mvn clean package -U
         env:
           MAVEN_USERNAME: ${{ secrets.HIBYTE_NEXUS_USER }}
           MAVEN_PASSWORD: ${{ secrets.HIBYTE_NEXUS_PASSWORD }}
