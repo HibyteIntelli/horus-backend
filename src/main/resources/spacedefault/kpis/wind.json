@@ -1,0 +1,8 @@
+{
+  "name": "wind",
+  "dimensions": {
+    "timeStamp": "string",
+    "targetId": "number"
+  },
+  "retriggers": []
+}

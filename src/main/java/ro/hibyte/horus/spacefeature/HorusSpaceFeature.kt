@@ -1,9 +1,11 @@
 package ro.hibyte.horus.spacefeature
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import one.space.spi.spacefeatures.SpaceFeature
 import one.space.spi.spacefeatures.SpaceFeatureHandler
 import one.space.spo.app.domain.AppScope
 import one.space.spo.app.service.SpaceFeatureHelperService
+import java.io.IOException
 import javax.enterprise.context.Dependent
 import javax.inject.Inject
 
@@ -55,7 +57,33 @@ class HorusSpaceFeature : SpaceFeatureHandler {
         changed = changed or importWorkflows()
         changed = changed or importScripts()
         changed = changed or importViews()
+        changed = changed or importKpis()
+        changed = changed or importKpiCharts()
         return changed
+    }
+
+    private fun importKpiCharts(): Boolean {
+        spaceFeatureHelperService.importKpiCharts(
+            "circularGauge", "barGauge", "lineSeries", "rangeSeries"
+        );
+        return true;
+    }
+
+    private fun importKpis(): Boolean {
+        try {
+            val mapper = ObjectMapper()
+            val kpis = this.javaClass.getResourceAsStream("/spacedefault/kpis/kpiNames.json")
+            if (kpis != null) {
+                val kpiNames = mapper.readValue(
+                    kpis,
+                    Array<String>::class.java
+                )
+                return spaceFeatureHelperService.kpis().importKpis(*kpiNames).spaceConfigurationChanged()
+            }
+        } catch (e: IOException) {
+            throw IllegalStateException("Could not read default kpi jsons", e)
+        }
+        return false
     }
 
     private fun importViews() = spaceFeatureHelperService.itemViews()
@@ -71,5 +99,4 @@ class HorusSpaceFeature : SpaceFeatureHandler {
                                                            .spaceConfigurationChanged()
 
     private fun importWorkflows() = spaceFeatureHelperService.importWorkflows(*WORKFLOWS)
-
 }
