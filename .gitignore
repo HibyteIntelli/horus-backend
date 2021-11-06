@@ -1,0 +1,12 @@
+target/
+.settings/
+*.log
+.classpath
+.project
+.springBeans
+.DS_Store
+.directory
+nb*
+*.iml
+/.idea
+rebel.xml
