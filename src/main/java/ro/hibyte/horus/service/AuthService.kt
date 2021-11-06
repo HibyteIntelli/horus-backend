@@ -6,7 +6,9 @@ import ro.hibyte.horus.utils.password
 import ro.hibyte.horus.utils.username
 import ro.hibyte.horus.utils.wekeoLink
 import java.util.*
+import javax.enterprise.context.ApplicationScoped
 
+@ApplicationScoped
 class AuthService {
 
     private val encodedUsernameAndPassword = Base64.getEncoder().encode("$username:$password".toByteArray())
