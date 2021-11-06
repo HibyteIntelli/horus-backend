@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import one.space.spi.spacefeatures.SpaceFeature
 import one.space.spi.spacefeatures.SpaceFeatureHandler
 import one.space.spo.app.domain.AppScope
+import one.space.spo.app.domain.ContentItem
+import one.space.spo.app.service.ContentItemService
 import one.space.spo.app.service.SpaceFeatureHelperService
 import java.io.IOException
 import javax.enterprise.context.Dependent
@@ -12,6 +14,10 @@ import javax.inject.Inject
 @Dependent
 @SpaceFeature(value = "Horus")
 class HorusSpaceFeature : SpaceFeatureHandler {
+
+    @Inject
+    @Transient
+    private lateinit var itemService: ContentItemService
 
     @Inject
     private lateinit var spaceFeatureHelperService: SpaceFeatureHelperService
@@ -47,6 +53,8 @@ class HorusSpaceFeature : SpaceFeatureHandler {
 
     private val SCRIPTS = arrayOf<String>()
 
+    private val ids: Map<Long, Long> = HashMap()
+
     override fun afterCreation(appScope: AppScope) {
         reinit(appScope)
     }
@@ -59,14 +67,38 @@ class HorusSpaceFeature : SpaceFeatureHandler {
         changed = changed or importViews()
         changed = changed or importKpis()
         changed = changed or importKpiCharts()
+        changed = changed or importDefaultItems(space.scopeKey)
         return changed
+    }
+
+    private fun importDefaultItems(scopeKey: String?): Boolean {
+        if (scopeKey != null) {
+            doItemImport(scopeKey, "chartType", "name")
+            doItemImport(scopeKey, "metric", "name")
+            return true
+        }
+        return false
+    }
+
+    private fun itemsExist(itemKey: String?, space: String?): Boolean {
+        val items: List<ContentItem?> = itemService.filter()
+            .typeKey(itemKey)
+            .appScopeKey(space)
+            .build().toList()
+        return !items.isEmpty()
+    }
+
+    private fun doItemImport(spaceKey: String, typeKey: String, key: String) {
+        if (!itemsExist(typeKey, spaceKey)) {
+            spaceFeatureHelperService.importItems(typeKey, key, ids)
+        }
     }
 
     private fun importKpiCharts(): Boolean {
         spaceFeatureHelperService.importKpiCharts(
             "circularGauge", "barGauge", "lineSeries", "rangeSeries"
-        );
-        return true;
+        )
+        return true
     }
 
     private fun importKpis(): Boolean {
