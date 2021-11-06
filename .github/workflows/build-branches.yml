@@ -34,8 +34,8 @@ jobs:
       - name: Maven Package
         run: mvn -s settings.xml clean package -U
         env:
-          MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          MAVEN_USERNAME: ${{ secrets.HIBYTE_NEXUS_USER }}
+          MAVEN_PASSWORD: ${{ secrets.HIBYTE_NEXUS_PASSWORD }}
 
       - name: Extract Branch Name
         uses: nelonoel/branch-name@v1.0.1
@@ -49,5 +49,5 @@ jobs:
           echo uploading build number jar to $BUILD_NUMBER_TARGET
           curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file target/spaceone-module-horus-*.jar $BUILD_NUMBER_TARGET
         env:
-          NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          NEXUS_USERNAME: ${{ secrets.HIBYTE_NEXUS_USER }}
+          NEXUS_PASSWORD: ${{ secrets.HIBYTE_NEXUS_PASSWORD }}
