@@ -1,1 +1,20 @@
-[{"id":547,"meta":{"itemType":"metric","created":"2021-11-06T15:30:12.621Z","updated":"2021-11-06T22:38:07.882423Z","spaceKey":"point"},"name":"Temperature (Celsius)","kpiIdent":"temperature","unit":"DEGREES_CELSIUS"},{"id":548,"meta":{"itemType":"metric","created":"2021-11-06T15:30:27.361Z","updated":"2021-11-06T15:58:28.276035Z","spaceKey":"point"},"name":"Ice Thickness","kpiIdent":"iceThickness","unit":"METERS"},{"id":549,"meta":{"itemType":"metric","created":"2021-11-06T15:30:39.870Z","updated":"2021-11-06T15:57:17.983395Z","spaceKey":"point"},"name":"Wind","kpiIdent":"wind","unit":"MILES_PER_HOUR"}]
+[
+  {
+    "id":547,
+    "name":"Temperature (Celsius)",
+    "kpiIdent":"temperature",
+    "unit":"DEGREES_CELSIUS"
+  },
+  {
+    "id":548,
+    "name":"Ice Thickness",
+    "kpiIdent":"iceThickness",
+    "unit":"METERS"
+  },
+  {
+    "id":549,
+    "name":"Wind",
+    "kpiIdent":"wind",
+    "unit":"MILES_PER_HOUR"
+  }
+]
