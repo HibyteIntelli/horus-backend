@@ -1,0 +1,64 @@
+name: Build Branch
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with: # running setup-java again overwrites the settings.xml
+          distribution: 'adopt'
+          java-version: '15'
+
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4
+        with:
+          maven-version: 3.6.2
+
+      - name: Check Maven Version
+        run: mvn --version
+
+      - name: Cache local Maven repository
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Setup Settings.xml
+        run: |
+          echo "$SETTINGS_XML" > ./settings.xml
+          cat ./settings.xml
+        shell: bash
+        env:
+          SETTINGS_XML: ${{ secrets.SETTINGS_XML }}
+
+      - name: Maven Package
+        run: mvn -s settings.xml clean package -U
+        env:
+          MAVEN_USERNAME: ${{ secrets.HIBYTE_NEXUS_USER }}
+          MAVEN_PASSWORD: ${{ secrets.HIBYTE_NEXUS_PASSWORD }}
+          RELEASES_SSH_KEY: ${{ secrets.RELEASES_SSH_KEY }}
+
+      - name: Extract Branch Name
+        uses: nelonoel/branch-name@v1.0.1
+
+      - name: Upload to Nexus Raw
+        run: |
+          LATEST_TARGET=https://nexus.hq-hydra.hibyte.ro/repository/hibyte-raw/modules/net/heydo/spaceone-module-horus/snapshot/${BRANCH_NAME}/latest-module.jar
+          BUILD_NUMBER_TARGET=https://nexus.hq-hydra.hibyte.ro/repository/hibyte-raw/modules/net/heydo/spaceone-module-horus/snapshot/${BRANCH_NAME}/${GITHUB_RUN_NUMBER}/module.jar
+          echo uploading latest jar to $LATEST_TARGET
+          curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file target/spaceone-module-horus-*.jar $LATEST_TARGET
+          echo uploading build number jar to $BUILD_NUMBER_TARGET
+          curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file target/spaceone-module-horus-*.jar $BUILD_NUMBER_TARGET
+        env:
+          NEXUS_USERNAME: ${{ secrets.HIBYTE_NEXUS_USER }}
+          NEXUS_PASSWORD: ${{ secrets.HIBYTE_NEXUS_PASSWORD }}
