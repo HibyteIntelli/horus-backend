@@ -34,6 +34,11 @@
 
     <repositories>
         <repository>
+            <id>unidata-all</id>
+            <name>Unidata All</name>
+            <url>https://artifacts.unidata.ucar.edu/repository/unidata-all/</url>
+        </repository>
+        <repository>
             <id>wissenswerft-releases</id>
             <name>wissenswerft Releases</name>
             <url>https://maven.wissenswerft.net/repository/releases/</url>
@@ -56,9 +61,22 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
         <kotlin.version>1.5.31</kotlin.version>
+        <netcdfJavaVersion>5.4.0</netcdfJavaVersion>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>edu.ucar</groupId>
+            <artifactId>cdm-core</artifactId>
+            <version>${netcdfJavaVersion}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu.ucar</groupId>
+            <artifactId>grib</artifactId>
+            <version>${netcdfJavaVersion}</version>
+            <scope>runtime</scope>
+        </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
