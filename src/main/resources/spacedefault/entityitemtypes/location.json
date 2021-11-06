@@ -1,0 +1,115 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "7049100a-81fe-4a8e-a01a-494afc1c5232",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "type",
+      "uid": "66922b65-a744-4684-909e-0a1ff697452c",
+      "type": "ENUM",
+      "orderKey": 1,
+      "labels": {
+        "de": "Type",
+        "en": "Type"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "enumAllowedValues": [
+        "POINT",
+        "LINE",
+        "POLYGON"
+      ],
+      "textMultiline": false,
+      "enumLabels": {},
+      "enumProperties": {}
+    },
+    {
+      "key": "points",
+      "uid": "a73b1eb4-afeb-4060-86c8-02560e7f64ac",
+      "type": "EMBEDDEDITEM",
+      "orderKey": 2,
+      "labels": {
+        "de": "Points",
+        "en": "Points"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": true,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedType": "locationPoint",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "location",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Location",
+    "en": "Location"
+  },
+  "namePlural": {
+    "de": "Locations",
+    "en": "Locations"
+  },
+  "description": {}
+}

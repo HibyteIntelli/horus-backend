@@ -1,0 +1,82 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "a36b1ef8-125b-409e-a29f-1ea82e4a5519",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "members",
+      "uid": "82be04c9-ee3a-4718-961a-0d6f8bf3a9d2",
+      "type": "ACCOUNT",
+      "orderKey": 1,
+      "labels": {
+        "de": "Members",
+        "en": "Members"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": true,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "team",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Team",
+    "en": "Team"
+  },
+  "namePlural": {
+    "de": "Teams",
+    "en": "Teams"
+  },
+  "description": {}
+}

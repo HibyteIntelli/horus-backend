@@ -16,7 +16,32 @@ class HorusSpaceFeature : SpaceFeatureHandler {
 
     private val WORKFLOWS = arrayOf<String>()
 
-    private val ITEM_TYPES = arrayOf<String>()
+    private val ITEM_TYPES = arrayOf(
+        "layout",
+        "chartType",
+        "locationPoint",
+        "location",
+        "metric",
+        "target",
+        "alert",
+        "team",
+        "chart",
+        "dashboard",
+        "dashboardCollection"
+    )
+
+    private val VIEWS = arrayOf(
+        "itemview_layout",
+        "itemview_chartType",
+        "itemview_location",
+        "itemview_metric",
+        "itemview_target",
+        "itemview_alert",
+        "itemview_team",
+        "itemview_chart",
+        "itemview_dashboard",
+        "itemview_dashboardCollection"
+    )
 
     private val SCRIPTS = arrayOf<String>()
 
@@ -29,8 +54,13 @@ class HorusSpaceFeature : SpaceFeatureHandler {
         var changed = importTypes()
         changed = changed or importWorkflows()
         changed = changed or importScripts()
+        changed = changed or importViews()
         return changed
     }
+
+    private fun importViews() = spaceFeatureHelperService.itemViews()
+                                                         .importViews(*VIEWS)
+                                                         .spaceConfigurationChanged()
 
     private fun importTypes() = spaceFeatureHelperService.contentItemTypes()
                                                          .importEntityItemTypes(*ITEM_TYPES)

@@ -1,0 +1,113 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "2106e9c1-6000-425e-864d-6fd8c09c5861",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "location",
+      "uid": "91c2d2ff-fa0e-49bd-8fd7-4a6a86191065",
+      "type": "LINK",
+      "orderKey": 1,
+      "labels": {
+        "de": "Location",
+        "en": "Location"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "location"
+      ],
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "metrics",
+      "uid": "2b290c9f-e303-4558-a23d-ccd72159f073",
+      "type": "LINK",
+      "orderKey": 2,
+      "labels": {
+        "de": "Metrics",
+        "en": "Metrics"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": true,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "metric"
+      ],
+      "autocompleteCount": 3,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "target",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Target",
+    "en": "Target"
+  },
+  "namePlural": {
+    "de": "Targets",
+    "en": "Targets"
+  },
+  "description": {}
+}
