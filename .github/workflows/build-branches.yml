@@ -26,16 +26,19 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Setup Settings.xml
-        run: echo "$SETTINGS_XML" > ./settings.xml
+        run: |
+          echo "$SETTINGS_XML" > ./settings.xml
+          cat ./settings.xml
         shell: bash
         env:
           SETTINGS_XML: ${{ secrets.SETTINGS_XML }}
 
       - name: Maven Package
-        run: mvn clean package -U
+        run: mvn -s settings.xml clean package -U
         env:
           MAVEN_USERNAME: ${{ secrets.HIBYTE_NEXUS_USER }}
           MAVEN_PASSWORD: ${{ secrets.HIBYTE_NEXUS_PASSWORD }}
+          RELEASES_SSH_KEY: ${{ secrets.RELEASES_SSH_KEY }}
 
       - name: Extract Branch Name
         uses: nelonoel/branch-name@v1.0.1
