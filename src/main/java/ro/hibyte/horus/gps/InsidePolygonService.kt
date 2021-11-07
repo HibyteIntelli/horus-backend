@@ -1,69 +1,14 @@
 package ro.hibyte.horus.gps
 
+import ro.hibyte.horus.dataModel.LocationPoint
 import kotlin.math.atan2
 
-class InsidePolygon {
+const val pi = 3.14159265
+const val twopi = 2 * pi
 
-    private var pi = 3.14159265
-    private var twopi = 2 * pi
+object InsidePolygonService{
 
-    fun main(args: Array<String>) {
-        val lat_array = ArrayList<Double>()
-        val long_array = ArrayList<Double>()
-
-        //This is the polygon bounding box, if you plot it,
-        //you'll notice it is a rough tracing of the parameter of
-        //the state of Florida starting at the upper left, moving
-        //clockwise, and finishing at the upper left corner of florida.
-        val polygon_lat_long_pairs = ArrayList<String>()
-        polygon_lat_long_pairs.add("31.000213,-87.584839")
-        //lat/long of upper left tip of florida.
-        polygon_lat_long_pairs.add("31.009629,-85.003052")
-        polygon_lat_long_pairs.add("30.726726,-84.838257")
-        polygon_lat_long_pairs.add("30.584962,-82.168579")
-        polygon_lat_long_pairs.add("30.73617,-81.476441")
-        //lat/long of upper right tip of florida.
-        polygon_lat_long_pairs.add("29.002375,-80.795288")
-        polygon_lat_long_pairs.add("26.896598,-79.938355")
-        polygon_lat_long_pairs.add("25.813738,-80.059204")
-        polygon_lat_long_pairs.add("24.93028,-80.454712")
-        polygon_lat_long_pairs.add("24.401135,-81.817017")
-        polygon_lat_long_pairs.add("24.700927,-81.959839")
-        polygon_lat_long_pairs.add("24.950203,-81.124878")
-        polygon_lat_long_pairs.add("26.0015,-82.014771")
-        polygon_lat_long_pairs.add("27.833247,-83.014527")
-        polygon_lat_long_pairs.add("28.8389,-82.871704")
-        polygon_lat_long_pairs.add("29.987293,-84.091187")
-        polygon_lat_long_pairs.add("29.539053,-85.134888")
-        polygon_lat_long_pairs.add("30.272352,-86.47522")
-        polygon_lat_long_pairs.add("30.281839,-87.628784")
-
-        //Convert the strings to doubles.
-        for (s in polygon_lat_long_pairs) {
-            lat_array.add(s.split(",").toTypedArray()[0].toDouble())
-            long_array.add(s.split(",").toTypedArray()[1].toDouble())
-        }
-
-        //prints TRUE true because the lat/long passed in is
-        //inside the bounding box.
-        println(
-            coordinate_is_inside_polygon(
-                25.7814014, -80.186969,
-                lat_array, long_array
-            )
-        )
-
-        //prints FALSE because the lat/long passed in
-        //is Not inside the bounding box.
-        println(
-            coordinate_is_inside_polygon(
-                25.831538, -1.069338,
-                lat_array, long_array
-            )
-        )
-    }
-
-    public fun coordinate_is_inside_polygon(
+    fun coordinate_is_inside_polygon(
         latitude: Double, longitude: Double,
         lat_array: ArrayList<Double>, long_array: ArrayList<Double>
     ): Boolean {
@@ -107,6 +52,71 @@ class InsidePolygon {
         return latitude > -90 && latitude < 90 && longitude > -180 && longitude < 180
     }
 
+    private fun find_Centroid(v: ArrayList<LocationPoint>): LocationPoint {
+        var ans = LocationPoint(0.0,0.0)
+        val n = v.size
+        var signedArea = 0.0
 
+        // For all vertices
+        for (i in 0 until n) {   // 0 -> x 1 -> y
+            val x0 = v[i].latitude
+            val y0 = v[i].longitude
+            val x1 = v[(i + 1) % n].latitude
+            val y1 = v[(i + 1) % n].longitude
+
+            // Calculate value of A
+            // using shoelace formula
+            val A = x0 * y1 - x1 * y0
+            signedArea += A
+
+            // Calculating coordinates of
+            // centroid of polygon
+            ans.latitude += (x0 + x1) * A
+            ans.longitude += (y0 + y1) * A
+        }
+        signedArea *= 0.5
+        ans.latitude = ans.latitude / (6 * signedArea)
+        ans.longitude = ans.longitude / (6 * signedArea)
+        return ans
+    }
+
+    // find the farthest points
+
+    private fun farthersPoint(list: ArrayList<LocationPoint>, centroid: LocationPoint): ArrayList<LocationPoint> {
+        var longX = 0.0
+        var longY = 0.0
+
+        list.forEach { point ->
+            run {
+                if(Math.abs(centroid.latitude - point.latitude) > longX) {
+                    longX = Math.abs(centroid.latitude - point.latitude)
+                }
+                if(Math.abs(centroid.longitude - point.longitude) > longY) {
+                    longY = Math.abs(centroid.longitude - point.longitude)
+                }
+            }
+
+        }
+        var locationPoint1 = LocationPoint(centroid.latitude + longX, centroid.longitude + longY)
+        var locationPoint2 = LocationPoint(centroid.latitude - longX, centroid.longitude - longY)
+        var data = ArrayList<LocationPoint>()
+        data.add(locationPoint1)
+        data.add(locationPoint2)
+        return data
+    }
+
+
+    fun generate2Points(list: List<LocationPoint>): ArrayList<LocationPoint> {
+        return farthersPoint(list as ArrayList<LocationPoint>, find_Centroid(list))
+    }
+
+    fun getPoints(): List<LocationPoint> {
+        var list = ArrayList<LocationPoint>()
+        list.add(LocationPoint(0.0, 1.1))
+        list.add(LocationPoint(0.0, 1.1))
+        list.add(LocationPoint(0.0, 1.1))
+        list.add(LocationPoint(0.0, 1.1))
+        return list
+    }
 
 }
