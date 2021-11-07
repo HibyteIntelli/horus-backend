@@ -32,5 +32,20 @@ class JobModelEntity {
             val status: String,
             val results: List<String>,
             val message: String
-    )
+    ) {
+        class Deserializer : ResponseDeserializable<JobCreationResponse> {
+            override fun deserialize(content: String): JobCreationResponse =
+                    Gson().fromJson(content, JobCreationResponse::class.java)
+        }
+    }
+
+    data class JobStatusResponse(
+            val status: String,
+            val message: String
+    ) {
+        class Deserializer : ResponseDeserializable<JobStatusResponse> {
+            override fun deserialize(content: String): JobStatusResponse =
+                    Gson().fromJson(content, JobStatusResponse::class.java)
+        }
+    }
 }

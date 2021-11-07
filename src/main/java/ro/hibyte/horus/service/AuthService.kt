@@ -9,7 +9,7 @@ import java.util.*
 
 class AuthService {
 
-    private val encodedUsernameAndPassword = Base64.getEncoder().encode("$username:$password".toByteArray())
+    private val encodedUsernameAndPassword = Base64.getEncoder().encodeToString("$username:$password".toByteArray())
 
     private val basicAuthHeader = "Authorization" to "Basic $encodedUsernameAndPassword"
 
