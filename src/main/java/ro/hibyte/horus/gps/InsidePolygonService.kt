@@ -105,9 +105,20 @@ object InsidePolygonService{
         return data
     }
 
+    private fun singlePoint(localP: LocationPoint): ArrayList<LocationPoint> {
+        var long = 0.0001
+        var list = ArrayList<LocationPoint>()
+        list.add(LocationPoint(localP.latitude + long, localP.longitude + long))
+        list.add(LocationPoint(localP.latitude - long, localP.longitude - long))
+        return list
+    }
 
     fun generate2Points(list: List<LocationPoint>): ArrayList<LocationPoint> {
-        return farthersPoint(list as ArrayList<LocationPoint>, find_Centroid(list))
+        if(list.size>1) {
+            return farthersPoint(list as ArrayList<LocationPoint>, find_Centroid(list))
+        } else {
+            return singlePoint(list.first())
+        }
     }
 
     fun getPoints(): List<LocationPoint> {

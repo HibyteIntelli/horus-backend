@@ -37,7 +37,6 @@ class HorusResource: ScopeResource {
     fun solvePoint(list: List<LocationPoint>): Response? {
         return Response.ok(InsidePolygonService.generate2Points(list)).build()
     }
-
     @GET
     @Path("getListPoints")
     @Produces("application/json")
