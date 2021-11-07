@@ -47,18 +47,18 @@ def fetch(kpiChart, params){
 
             switch(aggregationType) {
                 case "MONTHLY":
-                    data = [["argument":"January", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"February", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"March", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"April", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"May", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"June", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"July", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"August", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"September", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"October", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"November", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE],
-                            ["argument":"December", "min": Double.MAX_VALUE, "max": Double.MIN_VALUE]]
+                    data = [["argument":"January", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"February", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"March", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"April", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"May", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"June", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"July", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"August", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"September", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"October", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"November", "min": Double.MAX_VALUE, "max": -10000],
+                            ["argument":"December", "min": Double.MAX_VALUE, "max": -10000]]
                     values.forEach(v -> {
                         var d = LocalDateTime.parse(v.get("timeStamp").toString())
                         var index = d.getMonthValue() - 1
@@ -66,9 +66,16 @@ def fetch(kpiChart, params){
                         var minValue = valuesMap.get("min")
                         var maxValue = valuesMap.get("max")
                         var result = v.get("result")
-                        if(result < minValue || result > maxValue) {
-                            valuesMap.replace("min", result < minValue ? result : minValue)
-                            valuesMap.replace("max", result > maxValue ? result : maxValue)
+                        var changed = false
+                        if(result < minValue) {
+                            valuesMap.replace("min", result)
+                            changed = true
+                        }
+                        if(result > maxValue) {
+                            valuesMap.replace("max", result)
+                            changed = true
+                        }
+                        if(changed) {
                             data.remove(index)
                             data.add(index, valuesMap)
                         }
