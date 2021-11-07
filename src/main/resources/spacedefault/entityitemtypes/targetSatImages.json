@@ -1,0 +1,114 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "target",
+      "uid": "1fdb82ff-aa0a-4423-8a16-29770408e9b9",
+      "type": "LINK",
+      "orderKey": 0,
+      "labels": {
+        "de": "target",
+        "en": "target"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "target"
+      ],
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "time",
+      "uid": "d94d97b6-db70-4b80-8fdf-2fc53dcc37d0",
+      "type": "LOCALDATETIME",
+      "orderKey": 1,
+      "labels": {
+        "de": "time",
+        "en": "time"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false,
+      "minuteStepSize": 15
+    },
+    {
+      "key": "assets",
+      "uid": "9bbf6b58-db94-4095-acb3-d814b6304d47",
+      "type": "ASSETLINK",
+      "orderKey": 2,
+      "labels": {
+        "de": "assets",
+        "en": "assets"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": true,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "assetLinkTargetTypes": [
+        "imagedefault"
+      ],
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "targetSatImages",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "targetSatImages",
+    "en": "targetSatImages"
+  },
+  "namePlural": {
+    "de": "targetSatImages",
+    "en": "targetSatImages"
+  },
+  "description": {}
+}

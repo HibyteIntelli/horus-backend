@@ -1,0 +1,8 @@
+{
+  "name": "snowmelt",
+  "dimensions": {
+    "timeStamp": "string",
+    "targetId": "number"
+  },
+  "retriggers": []
+}

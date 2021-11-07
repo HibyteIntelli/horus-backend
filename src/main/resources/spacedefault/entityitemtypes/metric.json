@@ -1,0 +1,117 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "a9be54be-8f88-4138-ac62-3139ea788bfe",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "kpiIdent",
+      "uid": "91ce456b-df45-4666-bf86-8b4fd02afc47",
+      "type": "TEXT",
+      "orderKey": 1,
+      "labels": {
+        "de": "KPI Ident",
+        "en": "KPI Ident"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "unit",
+      "uid": "76a5c314-a1d7-4d9a-96c5-37aed0737786",
+      "type": "ENUM",
+      "orderKey": 2,
+      "labels": {
+        "de": "Unit",
+        "en": "Unit"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "enumAllowedValues": [
+        "METERS",
+        "DEGREES_CELSIUS",
+        "DEGREES_FAHRENHEIT",
+        "KM_PER_HOUR",
+        "MILES_PER_HOUR",
+        "METER_PER_MINUTE"
+      ],
+      "textMultiline": false,
+      "enumLabels": {},
+      "enumProperties": {}
+    }
+  ],
+  "templates": [],
+  "typekey": "metric",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Metric",
+    "en": "Metric"
+  },
+  "namePlural": {
+    "de": "Metrics",
+    "en": "Metrics"
+  },
+  "description": {}
+}

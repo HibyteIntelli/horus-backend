@@ -1,0 +1,10 @@
+{
+  "ident": "lineSeries",
+  "config": {
+    "argumentAxis" : {
+      "argumentType" : "string",
+      "title" : ""
+    },
+    "title" : ""
+  }
+}

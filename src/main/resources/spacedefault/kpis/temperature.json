@@ -1,0 +1,8 @@
+{
+  "name": "temperature",
+  "dimensions": {
+    "timeStamp": "string",
+    "targetId": "number"
+  },
+  "retriggers": []
+}
