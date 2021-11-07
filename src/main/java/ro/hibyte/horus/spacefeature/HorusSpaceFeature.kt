@@ -96,7 +96,7 @@ class HorusSpaceFeature : SpaceFeatureHandler {
 
     private fun importKpiCharts(): Boolean {
         spaceFeatureHelperService.importKpiCharts(
-            "circularGauge", "barGauge", "lineSeries", "rangeSeries"
+            "circularGauge", "lineSeries", "rangeSeries"
         )
         return true
     }
