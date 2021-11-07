@@ -3,6 +3,9 @@ import one.space.spo.app.service.contentitem.EntityItemPropertyFilter
 import org.omnifaces.util.Beans
 import one.space.spo.app.service.SpoqlService
 
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 def fetch(kpiChart, params){
     var data = [];
     ContentItemService entityItemService = Beans.getInstance(ContentItemService.class, true);
@@ -27,8 +30,9 @@ def fetch(kpiChart, params){
                     "' where {dimension 'targetId' eq " + chart.getSingleProperty("target").getId() + "} orderby {dimension 'timeStamp' descending}").asList();
             var value = values != null && values.size() > 0 ? values.get(0) : null;
             if(value != null) {
+                var prettyDate = LocalDateTime.parse(value.get("timeStamp").toString()).format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm"));
                 data.add([
-                        "argument": value.get("timeStamp"),
+                        "argument": prettyDate,
                         "value": value.get("result")
                 ]);
             }
