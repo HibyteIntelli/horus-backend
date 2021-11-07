@@ -1,0 +1,141 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "446be720-8b08-4560-981f-f9e69775e83c",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "team",
+      "uid": "2faf5a29-1718-4e19-a0e4-f8013b6a6e4a",
+      "type": "LINK",
+      "orderKey": 1,
+      "labels": {
+        "de": "Team",
+        "en": "Team"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "team"
+      ],
+      "autocompleteCount": 3,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "layout",
+      "uid": "0b93bea9-680b-48e5-a459-4bbf75ea0d49",
+      "type": "LINK",
+      "orderKey": 2,
+      "labels": {
+        "de": "Layout",
+        "en": "Layout"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "layout"
+      ],
+      "autocompleteCount": 4,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "charts",
+      "uid": "9d0196b2-be4d-4b2f-b929-b77de4118aea",
+      "type": "LINK",
+      "orderKey": 3,
+      "labels": {
+        "de": "Charts",
+        "en": "Charts"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": true,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "chart"
+      ],
+      "autocompleteCount": 3,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "dashboard",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Dashboard",
+    "en": "Dashboard"
+  },
+  "namePlural": {
+    "de": "Dashboards",
+    "en": "Dashboards"
+  },
+  "description": {}
+}

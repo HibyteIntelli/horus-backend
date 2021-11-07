@@ -1,0 +1,85 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "711bd450-2df8-4d1d-9b69-e36bb08e5f3e",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "dashboards",
+      "uid": "3f82d080-d3e9-46b0-90a5-0c39dfb0f41b",
+      "type": "LINK",
+      "orderKey": 1,
+      "labels": {
+        "de": "Dashboards",
+        "en": "Dashboards"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "dashboard"
+      ],
+      "autocompleteCount": 4,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "dashboardCollection",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Dashboard Collection",
+    "en": "Dashboard Collection"
+  },
+  "namePlural": {
+    "de": "Dashboard Collections",
+    "en": "Dashboard Collections"
+  },
+  "description": {}
+}

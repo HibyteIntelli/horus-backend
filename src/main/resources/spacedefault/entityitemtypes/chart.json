@@ -1,0 +1,139 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "2816eaa8-0f72-4b59-960f-b099523053b6",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "chartType",
+      "uid": "bfd33571-8c09-4830-ad06-3afdc539d282",
+      "type": "LINK",
+      "orderKey": 1,
+      "labels": {
+        "de": "Chart Type",
+        "en": "Chart Type"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "chartType"
+      ],
+      "autocompleteCount": 4,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "target",
+      "uid": "c4f9c53d-2aba-42cc-b3f1-38471d7894e5",
+      "type": "LINK",
+      "orderKey": 2,
+      "labels": {
+        "de": "Target",
+        "en": "Target"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "target"
+      ],
+      "autocompleteCount": 4,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "params",
+      "uid": "8d8be559-cd3a-4592-8b76-2fe150dc3e42",
+      "type": "OBJECT",
+      "orderKey": 3,
+      "labels": {
+        "de": "Params",
+        "en": "Params"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiScript": "def getDimensions(item){\n\t[:]\n}",
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "chart",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Chart",
+    "en": "Chart"
+  },
+  "namePlural": {
+    "de": "Charts",
+    "en": "Charts"
+  },
+  "description": {}
+}

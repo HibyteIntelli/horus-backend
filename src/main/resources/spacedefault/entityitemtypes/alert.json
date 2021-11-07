@@ -1,0 +1,172 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "accounts",
+      "uid": "7972f756-38c7-416e-b1a8-be8c556caae3",
+      "type": "ACCOUNT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Accounts",
+        "en": "Accounts"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": true,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "target",
+      "uid": "4e7854d0-840b-46bf-aff5-debad75ef3a4",
+      "type": "LINK",
+      "orderKey": 1,
+      "labels": {
+        "de": "Target",
+        "en": "Target"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "target"
+      ],
+      "autocompleteCount": 3,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "metric",
+      "uid": "e8567852-70c1-421e-8030-3be06f02cb5b",
+      "type": "LINK",
+      "orderKey": 2,
+      "labels": {
+        "de": "Metric",
+        "en": "Metric"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "linkTargetType": [
+        "metric"
+      ],
+      "autocompleteCount": 4,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "type",
+      "uid": "9135ab9e-ed2b-476f-b305-bde28b26160a",
+      "type": "ENUM",
+      "orderKey": 3,
+      "labels": {
+        "de": "Type",
+        "en": "Type"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "enumAllowedValues": [
+        "GT",
+        "LWR",
+        "EQ",
+        "NEQ"
+      ],
+      "textMultiline": false,
+      "enumLabels": {},
+      "enumProperties": {}
+    },
+    {
+      "key": "value",
+      "uid": "a643fcf9-d836-4170-bc31-8d00b2fccf36",
+      "type": "NUMBER",
+      "orderKey": 4,
+      "labels": {
+        "de": "Value",
+        "en": "Value"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false,
+      "numberDecimalPlaces": 3
+    }
+  ],
+  "templates": [],
+  "typekey": "alert",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Alert",
+    "en": "Alert"
+  },
+  "namePlural": {
+    "de": "Alerts",
+    "en": "Alerts"
+  },
+  "description": {}
+}

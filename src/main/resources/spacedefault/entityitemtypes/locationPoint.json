@@ -1,0 +1,107 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "latitude",
+      "uid": "cae2fb7c-3994-402e-8ccd-302e7aaa98d4",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Latitude",
+        "en": "Latitude"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "longitude",
+      "uid": "256ac309-78ea-486d-ab2d-18f5c543f5b2",
+      "type": "TEXT",
+      "orderKey": 1,
+      "labels": {
+        "de": "Longitude",
+        "en": "Longitude"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "height",
+      "uid": "202a40a7-7c11-45b2-9804-abbee93be35c",
+      "type": "TEXT",
+      "orderKey": 2,
+      "labels": {
+        "de": "Height",
+        "en": "Height"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "locationPoint",
+  "embeddable": true,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Location Point",
+    "en": "Location Point"
+  },
+  "namePlural": {
+    "de": "Location Points",
+    "en": "Location Points"
+  },
+  "description": {}
+}

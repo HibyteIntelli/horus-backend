@@ -5,9 +5,10 @@ import one.space.common.event.ContentItemDeletedEvent
 import one.space.common.event.ContentItemEvent
 import java.util.*
 import javax.enterprise.context.ApplicationScoped
+import javax.enterprise.context.Dependent
 import javax.enterprise.event.ObservesAsync
 
-@ApplicationScoped
+@Dependent
 class TargetObserver {
 
     private val targetIds: MutableSet<Number> = Collections.synchronizedSet(HashSet())
