@@ -49,9 +49,8 @@ class EyeResource : ScopeResource {
         for(i in 0..s) {
             val values = mapOf(
                     "targetId" to target,
-                    "timeStamp" to LocalDateTime.now().minusHours(i * interval)
+                    "timeStamp" to LocalDateTime.now().minusHours(i * interval).toString()
             )
-
             if(random){
                result = Random.nextDouble(min.toDouble(), max.toDouble())
             } else {
