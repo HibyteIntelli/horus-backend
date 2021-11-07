@@ -16,5 +16,11 @@
     "name":"Wind",
     "kpiIdent":"wind",
     "unit":"MILES_PER_HOUR"
+  },
+  {
+    "id": 967,
+    "name": "Snow Melt",
+    "kpiIdent": "snowmelt",
+    "unit": "METERS"
   }
 ]
