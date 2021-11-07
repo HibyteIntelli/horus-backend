@@ -48,4 +48,41 @@ class JobModelEntity {
                     Gson().fromJson(content, JobStatusResponse::class.java)
         }
     }
+
+    data class JobResultRespons(
+            val content: List<JobResultResponsContent>
+
+    ){
+        class Deserializer : ResponseDeserializable<JobResultRespons> {
+            override fun deserialize(content: String): JobResultRespons =
+                    Gson().fromJson(content, JobResultRespons::class.java)
+        }
+    }
+
+    data class JobResultResponsContent(
+            val downloadUri: String,
+            val filename: String,
+            val order: OrderCreateResponse,
+            val productInfo: ProductInfo,
+            val size: Long,
+            val url: String
+    )
+
+    data class ProductInfo(
+            val datasetId: String,
+            val product: String,
+            val productEndDate: String,
+            val productStartDate: String
+    )
+
+    data class OrderCreateResponse(
+            val orderId: String,
+            val status: String,
+            val message: String
+    ) {
+        class Deserializer : ResponseDeserializable<OrderCreateResponse> {
+            override fun deserialize(content: String): OrderCreateResponse =
+                    Gson().fromJson(content, OrderCreateResponse::class.java)
+        }
+    }
 }
