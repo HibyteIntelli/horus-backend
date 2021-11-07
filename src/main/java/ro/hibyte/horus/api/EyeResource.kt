@@ -44,7 +44,7 @@ class EyeResource : ScopeResource {
 
     @GET
     @Path("putKpis/{kpiName}")
-    fun startImages(@PathParam("kpiName") kpiName:String, @QueryParam("s") s:Int, @QueryParam("min") min:Double, @QueryParam("max") max:Double, @QueryParam("random") random:Boolean, @QueryParam("target") target:Int, @QueryParam("interval") interval:Int): Response{
+    fun startImages(@PathParam("kpiName") kpiName:String, @QueryParam("s") s:Int, @QueryParam("min") min:Int, @QueryParam("max") max:Int, @QueryParam("random") random:Boolean, @QueryParam("target") target:Int, @QueryParam("interval") interval:Int): Response{
         var result: Double = 0.0
         for(i in 0..s) {
             val values = mapOf(
@@ -53,9 +53,9 @@ class EyeResource : ScopeResource {
             )
 
             if(random){
-               result = Random.nextDouble(min, max)
+               result = Random.nextDouble(min.toDouble(), max.toDouble())
             } else {
-                result = max - (max-min)/(i+1)
+                result = (max - (max-min)/(i+1)).toDouble()
             }
            kpiService.storeKPIValue(scope.scopeKey, kpiName, values, result)
         }
