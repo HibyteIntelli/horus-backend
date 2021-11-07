@@ -2,7 +2,7 @@ package ro.hibyte.horus.service.images
 
 import ro.hibyte.horus.service.DataFetchService
 import ro.hibyte.horus.service.RequestService
-import javax.enterprise.context.ApplicationScoped
+import java.time.LocalDateTime
 import javax.enterprise.context.Dependent
 import javax.inject.Inject
 
@@ -60,7 +60,7 @@ class ImageFetchService {
                 "    \"dateRangeSelectValues\": [\n" +
                 "        {\n" +
                 "            \"name\": \"position\",\n" +
-                "            \"start\": \"2021-07-25T00:00:00.000Z\",\n" +
+                "            \"start\": \"2021-07-25T00:00:00.00Z\",\n" +
                 "            \"end\": \"2021-07-28T00:00:00.000Z\"\n" +
                 "        }\n" +
                 "    ],\n" +
@@ -73,7 +73,20 @@ class ImageFetchService {
                 "}"
 
         val jobId = dataFetchService.startJob(jobParamsString)
+        if(dataFetchService.getJobStatus(jobId) != "completed"){
+            //to fallback
+        } else {
+            val contents = dataFetchService.getJobResult(jobId)
+            val orderSource = contents.sortedBy { LocalDateTime.parse(it.productInfo.productStartDate) }.firstOrNull()
 
+            if(!orderSource?.order?.status.equals("completed")){
+                val orderObj = orderSource?.url?.let { dataFetchService.createOrder(jobId, it) }
+                Thread.sleep(5000)
+                orderObj?.third?.get()?.orderId?.let { dataFetchService.downloadResult(it) }
+            }
+
+
+        }
     }
 
 
