@@ -6,12 +6,13 @@ import com.github.kittinunf.fuel.core.Request
 import ro.hibyte.horus.utils.wekeoLink
 import javax.annotation.PostConstruct
 import javax.enterprise.context.ApplicationScoped
+import javax.enterprise.context.Dependent
 import javax.inject.Inject
-import com.github.kittinunf.fuel.Fuel.get as fuelGet
-import com.github.kittinunf.fuel.Fuel.post as fuelPost
-import com.github.kittinunf.fuel.Fuel.put as fuelPut
+import com.github.kittinunf.fuel.Fuel.get
+import com.github.kittinunf.fuel.Fuel.post
+import com.github.kittinunf.fuel.Fuel.put
 
-@ApplicationScoped
+@Dependent
 class RequestService {
 
     @Inject
@@ -36,10 +37,10 @@ class RequestService {
         }
     }
 
-    fun get(path: String) = fuelGet("$wekeoLink$path")
+    fun gett(path: String) = get("$wekeoLink$path")
 
-    fun put(path: String, params: Parameters) = fuelPut("$wekeoLink$path", params)
+    fun putt(path: String, params: Parameters) = put("$wekeoLink$path", params)
 
-    fun post(path: String, params: Parameters) = fuelPost("$wekeoLink$path", params)
+    fun postt(path: String, body: String) = post("$wekeoLink$path").body(body).header("content-type", "application/json")
 
 }
