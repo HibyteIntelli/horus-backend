@@ -1,0 +1,8 @@
+{
+  "name": "iceThickness",
+  "dimensions": {
+    "timeStamp": "string",
+    "targetId": "number"
+  },
+  "retriggers": []
+}

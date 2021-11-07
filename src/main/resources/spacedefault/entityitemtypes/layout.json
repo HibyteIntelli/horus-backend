@@ -1,0 +1,82 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "05e16909-1d75-4c23-801b-e2a1388fc05a",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Name",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "components",
+      "uid": "05f13817-359e-47c5-a211-ea51275f3ab9",
+      "type": "OBJECT",
+      "orderKey": 1,
+      "labels": {
+        "de": "Components",
+        "en": "Components"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": true,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "layout",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Layout",
+    "en": "Layout"
+  },
+  "namePlural": {
+    "de": "Layouts",
+    "en": "Layouts"
+  },
+  "description": {}
+}

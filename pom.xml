@@ -69,13 +69,11 @@
             <groupId>edu.ucar</groupId>
             <artifactId>cdm-core</artifactId>
             <version>${netcdfJavaVersion}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>edu.ucar</groupId>
             <artifactId>grib</artifactId>
             <version>${netcdfJavaVersion}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>

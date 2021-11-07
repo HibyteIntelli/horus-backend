@@ -7,9 +7,10 @@ import one.space.spo.app.service.ContentItemService
 import one.space.spo.app.service.KpiService
 import one.space.spo.web.cdi.CurrentApplicationScope
 import org.joda.time.LocalDateTime
-//import ro.hibyte.horus.service.images.ImageFetchService
+import ro.hibyte.horus.service.images.ImageFetchService
 import javax.enterprise.context.RequestScoped
 import javax.inject.Inject
+
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.PathParam
@@ -28,8 +29,8 @@ class EyeResource : ScopeResource {
     @Inject
     private lateinit var itemService: ContentItemService
 
-//    @Inject
-//    private lateinit var imageFetchService: ImageFetchService
+    @Inject
+    private lateinit var imageFetchService: ImageFetchService
 
     @Inject
     private lateinit var kpiService: KpiService
@@ -37,7 +38,7 @@ class EyeResource : ScopeResource {
     @GET
     @Path("startImages")
     fun startImages(): Response{
-//        imageFetchService.fetchDataForLocation(1)
+        imageFetchService.fetchDataForLocation(1)
         return Response.ok().build()
     }
 

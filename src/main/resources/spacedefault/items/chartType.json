@@ -1,0 +1,51 @@
+[
+  {
+    "id":562,
+    "name":"Pie Chart",
+    "key":"PIE_CHART",
+    "size":"3x3",
+    "chartIdent":"pieChart"
+  },
+  {
+    "id":563,
+    "name":"Doughnut Series",
+    "key":"DOUGHNUT_SERIES",
+    "size":"3x3",
+    "chartIdent":"doughnutSeries"
+  },
+  {
+    "id":564,
+    "name":"Bar Gauge",
+    "key":"LINE_SERIES",
+    "size":"8x2",
+    "chartIdent":"lineSeries"
+  },
+  {
+    "id":565,
+    "name":"Polar Chart",
+    "key":"POLAR_CHART",
+    "size":"5x3",
+    "chartIdent":"polarChart"
+  },
+  {
+    "id":609,
+    "name":"Circular Gauge",
+    "key":"CIRCULAR_GAUGE",
+    "size":"3x3",
+    "chartIdent":"circularGauge"
+  },
+  {
+    "id":610,
+    "name":"Range Series",
+    "key":"RANGE_SERIES",
+    "size":"5x3",
+    "chartIdent":"rangeSeries"
+  },
+  {
+    "id":611,
+    "name":"Line Series",
+    "key":"LINE_SERIES",
+    "size":"5x3",
+    "chartIdent":"lineSeries"
+  }
+]

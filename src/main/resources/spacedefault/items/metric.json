@@ -1,0 +1,26 @@
+[
+  {
+    "id":547,
+    "name":"Temperature (Celsius)",
+    "kpiIdent":"temperature",
+    "unit":"DEGREES_CELSIUS"
+  },
+  {
+    "id":548,
+    "name":"Ice Thickness",
+    "kpiIdent":"iceThickness",
+    "unit":"METERS"
+  },
+  {
+    "id":549,
+    "name":"Wind",
+    "kpiIdent":"wind",
+    "unit":"MILES_PER_HOUR"
+  },
+  {
+    "id": 967,
+    "name": "Snow Melt",
+    "kpiIdent": "snowmelt",
+    "unit": "METERS"
+  }
+]

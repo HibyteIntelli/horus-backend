@@ -1,0 +1,10 @@
+{
+  "ident": "rangeSeries",
+  "config": {
+    "argumentAxis" : {
+      "argumentType" : "string",
+      "title" : ""
+    },
+    "title" : ""
+  }
+}

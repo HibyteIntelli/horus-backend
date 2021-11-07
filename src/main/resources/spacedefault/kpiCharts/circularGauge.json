@@ -1,0 +1,10 @@
+{
+  "ident": "circularGauge",
+  "config": {
+    "argumentAxis" : {
+      "argumentType" : "string",
+      "title" : ""
+    },
+    "title" : ""
+  }
+}

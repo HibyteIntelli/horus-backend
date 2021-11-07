@@ -1,0 +1,150 @@
+{
+  "hierarchical": false,
+  "useAutocompleteForParent": false,
+  "serializeScripts": {},
+  "deserializeScripts": {},
+  "deleteScript": {},
+  "postSaveScripts": {},
+  "preCreateScripts": {},
+  "uiConfig": {
+    "formGroupStyle": "LIST",
+    "uiStringConfig": {
+      "includeID": false,
+      "includeType": false,
+      "includeSelectedProperties": true
+    }
+  },
+  "properties": [
+    {
+      "key": "name",
+      "uid": "00a4a16c-afc4-4008-ad4f-f9e7b2ce5a90",
+      "type": "TEXT",
+      "orderKey": 0,
+      "labels": {
+        "de": "Nme",
+        "en": "Name"
+      },
+      "uiConfig": {
+        "inUIString": true,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    },
+    {
+      "key": "key",
+      "uid": "9d9d94e4-3a60-4508-8ab1-2eb55b9ce2ed",
+      "type": "ENUM",
+      "orderKey": 1,
+      "labels": {
+        "de": "Key",
+        "en": "Key"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "enumAllowedValues": [
+        "PIE_CHART",
+        "LINE_SERIES",
+        "RANGE_SERIES",
+        "CIRCULAR_GAUGE",
+        "DOUGHNUT_SERIES",
+        "POLAR_CHART",
+        "BAR_GAUGE"
+      ],
+      "textMultiline": false,
+      "enumLabels": {},
+      "enumProperties": {}
+    },
+    {
+      "key": "size",
+      "uid": "2e43c10c-83cd-4921-ab56-cd07d9fad0dd",
+      "type": "ENUM",
+      "orderKey": 2,
+      "labels": {
+        "de": "Size",
+        "en": "Size"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "enumAllowedValues": [
+        "3x3",
+        "8x2",
+        "5x3"
+      ],
+      "textMultiline": false,
+      "enumLabels": {},
+      "enumProperties": {}
+    },
+    {
+      "key": "chartIdent",
+      "uid": "3728716e-f23a-41e5-9eee-74e9b5389451",
+      "type": "TEXT",
+      "orderKey": 3,
+      "labels": {
+        "de": "Chart Ident",
+        "en": "Chart Ident"
+      },
+      "uiConfig": {
+        "inUIString": false,
+        "description": {}
+      },
+      "multilingual": false,
+      "multilingualAutoFill": false,
+      "required": false,
+      "list": false,
+      "immutable": false,
+      "ignoreAtImport": false,
+      "autocompleteCount": 10,
+      "linkApiFormat": "ID",
+      "embeddedOptional": false,
+      "kpiShowOnlyValue": false,
+      "textMultiline": false
+    }
+  ],
+  "templates": [],
+  "typekey": "chartType",
+  "embeddable": false,
+  "publishingWorkflow": false,
+  "name": {
+    "de": "Chart Type",
+    "en": "Chart Type"
+  },
+  "namePlural": {
+    "de": "Chart Types",
+    "en": "Chart Types"
+  },
+  "description": {}
+}
