@@ -35,7 +35,8 @@ class HorusSpaceFeature : SpaceFeatureHandler {
         "team",
         "chart",
         "dashboard",
-        "dashboardCollection"
+        "dashboardCollection",
+        "targetSatImages"
     )
 
     private val VIEWS = arrayOf(
@@ -48,7 +49,8 @@ class HorusSpaceFeature : SpaceFeatureHandler {
         "itemview_team",
         "itemview_chart",
         "itemview_dashboard",
-        "itemview_dashboardCollection"
+        "itemview_dashboardCollection",
+        "itemview_targetSatImages"
     )
 
     private val SCRIPTS = arrayOf<String>()
